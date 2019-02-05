@@ -5,20 +5,20 @@
 [index_projects_allProjects]
     other = "All Projects"
 [index_blog_latestPosts]
-    other = "Latest Post"
+    other = "最新文章"
 [index_blog_allPosts]
-    other = "All Posts"
+    other = "点此查看更多信息"
 [index_blog_readMore]
-    other = "Read more"
+    other = "阅读全文"
 [index_currentTime]
     other = "我的本地时间是"
 [nav_backToSection]
     other = "回到 {{ .Title }}"
 [nav_main]
-    other = "main"
+    other = "主页"
 [blog_readingTime]
-    one = "{{ .Count }} minute read"
-    other = "{{ .Count }} minutes read"
+    one = "已阅读{{ .Count }}分钟"
+    other = "已阅读{{ .Count }}分钟"
 [blog_shareThis]
     other = "Share this"
 [footer_text]
