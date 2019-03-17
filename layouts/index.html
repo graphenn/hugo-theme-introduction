@@ -63,7 +63,7 @@
                     </div>
                 </div>
                 {{ else }}
-                <div class="markdown has-text-centered">
+                <div class="markdown has-text">
                     {{ .Content }}
                 </div>
                 {{ end }}
@@ -92,7 +92,7 @@
                 <p>{{ i18n "index_currentTime" . }} <span id="time"></span>.</p>
                 {{ end }}
                 {{ with .Site.Params.email }}
-                <h3 class="subtitle is-3 has-text-centered top-pad">
+                <h3 class="subtitle is-4 has-text-centered top-pad">
                     <a href="mailto:{{ . }}">{{ . }}</a>
                 </h3>
                 {{ end }}
