@@ -43,8 +43,26 @@
 
         {{ with .Site.GetPage "/home" }}
         {{ $home := . }}
-        {{ range sort (.Resources.ByType "page") "Params.weight" }}
+        {{ $pages := .Resources.ByType "page" }}
+
+        {{ with .Site.GetPage "/blog" }} 
+            {{ $pages = $pages | append . }}
+        {{ end }}
+
+        {{ with .Site.GetPage "/projects" }} 
+            {{ $pages = $pages | append . }}
+        {{ end }}
+
+        {{ range sort $pages "Params.weight" }}
         {{ if ne .Name "contact.md" }}
+        {{ if eq .File.Dir "projects/" }}
+            <!-- Now for some cool projects -->
+            {{ partial "home/projects.html" . }}
+        {{ else if eq .File.Dir "blog/" }}
+            <!-- Let`s show some blog posts -->
+            {{ partial "home/blog.html" . }}
+        {{ else }}
+
         <!-- Range through all sections in /home execept contact.md -->
         <div class="section" id="{{ .File.TranslationBaseName }}">
             <div class="container">
@@ -76,10 +94,7 @@
         </div>
         {{ end }}
         {{ end }}
-        <!-- Now for some cool projects -->
-        {{ partial "home/projects.html" . }}
-        <!-- Let`s show some blog posts -->
-        {{ partial "home/blog.html" . }}
+        {{ end }}
         <!-- Let`s chat, shall we? -->
         {{ with .Resources.GetMatch "contact.md" }}
         <div class="section" id="{{ .File.TranslationBaseName }}">
