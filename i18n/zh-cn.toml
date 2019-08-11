@@ -7,7 +7,7 @@
 [index_blog_latestPosts]
     other = "最新文章"
 [index_blog_allPosts]
-    other = "所有文章"
+    other = "点此查看更多信息"
 [index_blog_readMore]
     other = "阅读全文"
 [index_currentTime]
